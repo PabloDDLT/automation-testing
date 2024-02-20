@@ -1,0 +1,70 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 131088 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#
+#  
+             [id=34180, stack(0x0000002de2f00000,0x0000002de3000000) (1024K)]
+  0x0000018a466ef250 WorkerThread "GC Thread#4"                     [id=34024, stack(0x0000002de3000000,0x0000002de3100000) (1024K)]
+  0x0000018a46c048b0 WorkerThread "GC Thread#5"                     [id=36020, stack(0x0000002de3400000,0x0000002de3500000) (1024K)]
+  0x0000018a47b489a0 WorkerThread "GC Thread#6"                     [id=29496, stack(0x0000002de3500000,0x0000002de3600000) (1024K)]
+  0x0000018a48526550 WorkerThread "GC Thread#7"                     [id=9072, stack(0x0000002de3600000,0x0000002de3700000) (1024K)]
+  0x0000018a628bd1a0 ConcurrentGCThread "G1 Main Marker"            [id=37048, stack(0x0000002de1d00000,0x0000002de1e00000) (1024K)]
+  0x0000018a628bdd60 WorkerThread "G1 Conc#0"                       [id=24572, stack(0x0000002de1e00000,0x0000002de1f00000) (1024K)]
+  0x0000018a4856bd70 WorkerThread "G1 Conc#1"                       [id=38460, stack(0x0000002de3a00000,0x0000002de3b00000) (1024K)]
+  0x0000018a004734d0 ConcurrentGCThread "G1 Refine#0"               [id=3524, stack(0x0000002de1f00000,0x0000002de2000000) (1024K)]
+  0x0000018a6290c870 ConcurrentGCThread "G1 Service"                [id=33820, stack(0x0000002de2000000,0x0000002de2100000) (1024K)]
+Total: 15
+
+Threads with active compile tasks:
+C2 CompilerThread0    19472 5640       4       org.aspectj.apache.bcel.classfile.ClassParser::parse (93 bytes)
+C2 CompilerThread1    19472 5644       4       org.aspectj.apache.bcel.classfile.ClassParser::readInterfaces (56 bytes)
+C2 CompilerThread2    19473 5643       4       org.aspectj.apache.bcel.classfile.ClassParser::readClassInfo (57 bytes)
+Total: 3
+
+VM state: not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap address: 0x0000000743000000, size: 3024 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000018a01000000-0x0000018a01c90000-0x0000018a01c90000), size 13172736, SharedBaseAddress: 0x0000018a01000000, ArchiveRelocationMode: 1.
+Compressed class space mapped at: 0x0000018a02000000-0x0000018a42000000, reserved size: 1073741824
+Narrow klass base: 0x0000018a01000000, Narrow klass shift: 0, Narrow klass range: 0x100000000
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 16 size 48 Howl #buckets 8 coarsen threshold 3686 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 4096
+ CPUs: 8 total, 8 available
+ Memory: 12093M
+ Large Page Support: Disabled
+ NUMA Support: Disabled
+ Compressed Oops: Enabled (Zero based)
+ Heap Region Size: 2M
+ Heap Min Capacity: 8M
+ Heap Initial Capacity: 190M
+ Heap Max Capacity: 3024M
+ Pre-touch: Disabled
+ Parallel Workers: 8
+ Concurrent Workers: 2
+ Concurrent Refinement Workers: 8
+ Periodic GC: Disabled
+
+Heap:
+ garbage-first heap   total 174080K, used 153600K [0x0000000743000000, 0x0000000800000000)
+  region size 2048K, 28 young (57344K), 1 survivors (2048K)
+ Metaspace       used 50461K, committed 51008K, reserved 1114112K
+  class space    used 6212K, committed 6464K, reserved 1048576K
+
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, TAMS=top-at-mark-start, PB=parsable bottom
+|   0|0x0000000743000000, 0x0000000743200000, 0x0000000743200000|100%| O|  
+|   1|100%| O|  
+|   2)
